@@ -168,6 +168,7 @@ angular_damp = -1.0
 script = ExtResource( 1 )
 speed = 400
 health = 10
+fire_rate = 0.5
 
 [node name="sprite" type="Sprite" parent="."]
 

@@ -4,10 +4,12 @@ const Bullet = preload("../bullet/bullet.tscn")
 
 export var speed = 400
 export var health = 10
+export var fire_rate = 0.5
 onready var animation = get_node('animation')
 
 var last_direction = 1
 var selected = 0
+var current_fire_time = 0
 
 func _ready():
 	connect("body_entered", self, 'on_collision')
@@ -26,6 +28,7 @@ func on_collision(body):
 
 func _process(delta):
 	var direction = 0;
+	current_fire_time += delta
 	global.player_pos = self.global_position
 
 	if Input.is_action_pressed("run_right"):
@@ -73,8 +76,14 @@ func _process(delta):
 		global.emit_signal('selected', 2)
 
 	if Input.is_action_just_released('shoot'):
+		if current_fire_time < fire_rate:
+			return
+
+		current_fire_time = 0
+
 		var bullet = Bullet.instance()
-		bullet.global_translate(self.global_position)
+		#bullet.global_translate()
+		bullet.position = self.position
 
 		var translate_x = 70;
 		if last_direction == -1:
