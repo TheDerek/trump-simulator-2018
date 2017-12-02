@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 11.2313, 10.5451 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=6]
 
 resource_name = "run_left"
 length = 1.25
@@ -48,9 +48,8 @@ tracks/2/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 
-resource_name = "run_right"
 length = 1.25
 loop = true
 step = 0.25
@@ -151,39 +150,38 @@ tracks/1/keys = {
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
-mode = 0
-mass = 1.0
+mode = 2
+mass = 0.6
 friction = 1.0
 bounce = 0.0
-gravity_scale = 1.0
+gravity_scale = 6.0
 custom_integrator = false
 continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
+contacts_reported = 4
+contact_monitor = true
 sleeping = false
 can_sleep = true
 linear_velocity = Vector2( 0, 0 )
-linear_damp = 4.0
+linear_damp = 1.0
 angular_velocity = 0.0
 angular_damp = -1.0
 script = ExtResource( 1 )
 speed = 400
+health = 10
 
 [node name="sprite" type="Sprite" parent="."]
 
 position = Vector2( -8.87004, 0.745621 )
 scale = Vector2( 0.36664, 0.36664 )
 texture = ExtResource( 2 )
-flip_h = true
 vframes = 4
 hframes = 6
-frame = 7
+frame = 20
 
 [node name="bounds" type="CollisionShape2D" parent="."]
 
-visible = false
-position = Vector2( 2.89973, 0.318583 )
-scale = Vector2( 2.50379, 3.45693 )
+position = Vector2( -15.9716, 0.318583 )
+scale = Vector2( 2.02074, 3.45693 )
 shape = SubResource( 1 )
 
 [node name="animation" type="AnimationPlayer" parent="."]
@@ -191,8 +189,8 @@ shape = SubResource( 1 )
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 root_node = NodePath("..")
-anims/run_left = SubResource( 3 )
-anims/run_right = SubResource( 2 )
+anims/run_left = SubResource( 6 )
+anims/run_right = SubResource( 3 )
 anims/stand_left = SubResource( 4 )
 anims/stand_right = SubResource( 5 )
 playback/active = true

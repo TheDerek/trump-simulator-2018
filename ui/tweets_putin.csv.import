@@ -1,0 +1,14 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+valid=false
+
+[deps]
+
+source_md5="9f04c2a326770ad54f741a29f794e8ed"
+
+[params]
+
+compress=true
+delimiter=0
