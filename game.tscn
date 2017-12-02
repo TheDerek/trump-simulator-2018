@@ -1,14 +1,17 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://sprites/street.jpg" type="Texture" id=1]
-[ext_resource path="res://trump/trump.tscn" type="PackedScene" id=2]
+[ext_resource path="res://tweet/tweet.tscn" type="PackedScene" id=1]
+[ext_resource path="res://sprites/street.jpg" type="Texture" id=2]
+[ext_resource path="res://trump/trump.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 9.94181, 9.23212 )
 
-[node name="game" type="Node2D"]
+[node name="root" type="Node2D"]
+
+[node name="tweet" parent="." instance=ExtResource( 1 )]
 
 [node name="street" type="RigidBody2D" parent="."]
 
@@ -35,7 +38,7 @@ angular_damp = -1.0
 
 position = Vector2( 3.38428, -204.437 )
 scale = Vector2( 1.10906, 1.10906 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="street"]
 
@@ -43,7 +46,7 @@ position = Vector2( 4.7953, 41.1279 )
 scale = Vector2( 35.2166, 1 )
 shape = SubResource( 1 )
 
-[node name="trump" parent="." instance=ExtResource( 2 )]
+[node name="trump" parent="." instance=ExtResource( 3 )]
 
 position = Vector2( -13.927, 0.419586 )
 mode = 2
@@ -60,7 +63,7 @@ limit_left = -10000000
 limit_top = -10000000
 limit_right = 10000000
 limit_bottom = 10000000
-limit_smoothed = false
+limit_smoothed = true
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 smoothing_enabled = false
