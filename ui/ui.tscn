@@ -1,8 +1,24 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://ui/ui.gd" type="Script" id=1]
 [ext_resource path="res://ui/tweet.tscn" type="PackedScene" id=2]
-[ext_resource path="res://bullet/sprite.png" type="Texture" id=3]
+[ext_resource path="res://ui/Keyboard_Black_1.png" type="Texture" id=3]
+[ext_resource path="res://ui/Keyboard_Black_2.png" type="Texture" id=4]
+[ext_resource path="res://ui/Keyboard_Black_3.png" type="Texture" id=5]
+[ext_resource path="res://bullet/sprite.png" type="Texture" id=6]
+[ext_resource path="res://ui/Keyboard_White_A.png" type="Texture" id=7]
+[ext_resource path="res://ui/arrowLeft.png" type="Texture" id=8]
+[ext_resource path="res://ui/Keyboard_White_D.png" type="Texture" id=9]
+[ext_resource path="res://ui/arrowRight.png" type="Texture" id=10]
+[ext_resource path="res://ui/Keyboard_White_Space.png" type="Texture" id=11]
+[ext_resource path="res://ui/arial.ttf" type="DynamicFontData" id=12]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 16
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 12 )
 
 [node name="root" type="CanvasLayer"]
 
@@ -39,6 +55,14 @@ margin_right = 386.0
 margin_bottom = 41.0
 index = 1
 
+[node name="tweet_3" parent="panel" instance=ExtResource( 2 )]
+
+margin_left = 346.0
+margin_top = 1.0
+margin_right = 386.0
+margin_bottom = 41.0
+index = 1
+
 [node name="tweet_2" parent="panel" instance=ExtResource( 2 )]
 
 margin_left = 697.0
@@ -47,24 +71,107 @@ margin_right = 737.0
 margin_bottom = 41.0
 index = 2
 
+[node name="Keyboard_Black_1" type="Sprite" parent="."]
+
+position = Vector2( 309.147, 195.412 )
+scale = Vector2( 0.573509, 0.573509 )
+texture = ExtResource( 3 )
+
+[node name="Keyboard_Black_2" type="Sprite" parent="."]
+
+position = Vector2( 662.726, 196.147 )
+scale = Vector2( 0.632317, 0.632317 )
+texture = ExtResource( 4 )
+
+[node name="Keyboard_Black_3" type="Sprite" parent="."]
+
+position = Vector2( 999.095, 192.104 )
+scale = Vector2( 0.624966, 0.624966 )
+texture = ExtResource( 5 )
+
 [node name="marker_0" type="Sprite" parent="."]
 
 position = Vector2( 264.323, 170.397 )
 scale = Vector2( 0.503515, 0.503515 )
-texture = ExtResource( 3 )
+texture = ExtResource( 6 )
 
 [node name="marker_1" type="Sprite" parent="."]
 
 visible = false
 position = Vector2( 610.488, 167.953 )
 scale = Vector2( 0.503515, 0.503515 )
-texture = ExtResource( 3 )
+texture = ExtResource( 6 )
 
 [node name="marker_2" type="Sprite" parent="."]
 
 visible = false
 position = Vector2( 943.621, 169.582 )
 scale = Vector2( 0.503515, 0.503515 )
-texture = ExtResource( 3 )
+texture = ExtResource( 6 )
+
+[node name="Keyboard_White_A" type="Sprite" parent="."]
+
+position = Vector2( 73.2127, 574.223 )
+scale = Vector2( 0.463245, 0.463245 )
+texture = ExtResource( 7 )
+
+[node name="arrowLeft" type="Sprite" parent="."]
+
+position = Vector2( 31.9681, 572.59 )
+texture = ExtResource( 8 )
+
+[node name="Keyboard_White_D" type="Sprite" parent="."]
+
+position = Vector2( 945.727, 576.68 )
+scale = Vector2( 0.46, 0.46 )
+texture = ExtResource( 9 )
+
+[node name="arrowRight" type="Sprite" parent="."]
+
+position = Vector2( 986.805, 575.872 )
+texture = ExtResource( 10 )
+
+[node name="Keyboard_White_Space" type="Sprite" parent="."]
+
+position = Vector2( 228.356, 576.638 )
+scale = Vector2( 0.718947, 0.718947 )
+texture = ExtResource( 11 )
+
+[node name="Panel" type="Panel" parent="."]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 264.0
+margin_top = 567.0
+margin_right = 378.0
+margin_bottom = 590.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Label" type="Label" parent="Panel"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 3.0
+margin_top = 2.0
+margin_right = 109.0
+margin_bottom = 21.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "[FIRE TWEET]"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 
