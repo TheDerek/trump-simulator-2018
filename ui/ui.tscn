@@ -39,8 +39,8 @@ margin_bottom = 202.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
+size_flags_horizontal = 2
+size_flags_vertical = 2
 
 [node name="tweet_0" parent="panel" instance=ExtResource( 2 )]
 
@@ -48,14 +48,6 @@ margin_left = -2.0
 margin_right = 38.0
 
 [node name="tweet_1" parent="panel" instance=ExtResource( 2 )]
-
-margin_left = 346.0
-margin_top = 1.0
-margin_right = 386.0
-margin_bottom = 41.0
-index = 1
-
-[node name="tweet_3" parent="panel" instance=ExtResource( 2 )]
 
 margin_left = 346.0
 margin_top = 1.0
